@@ -1,5 +1,13 @@
 import { useWallet } from '../hooks/useWallet';
 
+/**
+ * Render UI for connecting to and managing a MetaMask wallet.
+ *
+ * Displays an alert with an install link when MetaMask is not available, a condensed
+ * address and network label with controls when connected, and a connect button when not connected.
+ *
+ * @returns The JSX element containing the wallet connection UI (install prompt, connection button, or connected controls including switch, reconnect, and disconnect actions).
+ */
 export function WalletConnect() {
   const {
     address,
