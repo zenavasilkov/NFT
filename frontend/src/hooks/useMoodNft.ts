@@ -146,6 +146,7 @@ export function useMoodNft(userAddress?: string) {
   const flipMood = useCallback(async (tokenId: number) => {
     if (!userAddress) return;
 
+    setIsLoading(true);
     setError(null);
 
     try {
@@ -165,6 +166,8 @@ export function useMoodNft(userAddress?: string) {
     } catch (err: any) {
       console.error('❌ flipMood error:', err);
       setError(err.message || 'Failed to flip mood');
+    } finally {
+      setIsLoading(false);
     }
   }, [userAddress, loadUserNFTs]);
 

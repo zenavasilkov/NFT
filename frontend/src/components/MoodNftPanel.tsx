@@ -74,7 +74,7 @@ export function MoodNftPanel({ userAddress }: MoodNftPanelProps) {
               <p className="text-sm mt-1">Mint your first mood-changing NFT above!</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4">
               {nfts.map((nft) => (
                 <TokenViewer
                   key={nft.tokenId}

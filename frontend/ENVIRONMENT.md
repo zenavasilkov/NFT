@@ -64,7 +64,6 @@ export const CONTRACT_ADDRESSES = {
 ### Why Environment Variables?
 
 - **Flexibility**: Different addresses for dev/test/prod
-- **Security**: No hardcoded addresses in code
 - **CI/CD**: Easy to configure for different environments
 - **Team collaboration**: Each developer can use their own addresses
 

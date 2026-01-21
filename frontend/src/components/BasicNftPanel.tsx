@@ -12,14 +12,15 @@ export function BasicNftPanel({ userAddress }: BasicNftPanelProps) {
   const [isMinting, setIsMinting] = useState(false);
 
   const handleMint = async () => {
-    if (!tokenUri.trim()) {
+    const trimmedUri = tokenUri.trim();
+    if (!trimmedUri) {
       alert('Please enter a token URI');
       return;
     }
 
     setIsMinting(true);
     try {
-      await mintNft(tokenUri);
+      await mintNft(trimmedUri);
       setTokenUri('');
     } catch (error) {
       console.error('Mint failed:', error);

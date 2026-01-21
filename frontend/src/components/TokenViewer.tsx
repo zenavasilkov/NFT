@@ -1,4 +1,5 @@
 import { type NFT } from '../types';
+import DOMPurify from 'dompurify';
 
 interface TokenViewerProps {
   nft: NFT;
@@ -53,7 +54,7 @@ export function TokenViewer({ nft, onFlipMood, isFlipping }: TokenViewerProps) {
               justifyContent: 'center',
               overflow: 'hidden'
             }}
-            dangerouslySetInnerHTML={{ __html: svgString }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(svgString, { USE_PROFILES: { svg: true } }) }}
           />
         </div>
       );

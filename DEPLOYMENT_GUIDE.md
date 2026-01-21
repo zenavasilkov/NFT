@@ -35,7 +35,7 @@ make deploy
 
 **What to look for:**
 - You should see output like:
-  ```
+  ```text
   Deploying BasicNft...
   BasicNft deployed to: 0x...
   ```
@@ -56,7 +56,7 @@ make deployMood
 
 **What to look for:**
 - You should see output like:
-  ```
+  ```text
   Deploying MoodNft...
   MoodNft deployed to: 0x...
   ```
