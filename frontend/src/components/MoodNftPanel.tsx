@@ -6,6 +6,12 @@ interface MoodNftPanelProps {
   userAddress: string;
 }
 
+/**
+ * Render a panel that lets a user mint new Mood NFTs and view or flip the mood of owned NFTs.
+ *
+ * @param userAddress - The user's wallet address whose Mood NFTs are displayed
+ * @returns The Mood NFT panel element containing mint controls, the user's NFT list, and an informational footer
+ */
 export function MoodNftPanel({ userAddress }: MoodNftPanelProps) {
   const { nfts, isLoading, error, mintNft, flipMood } = useMoodNft(userAddress);
   const [isMinting, setIsMinting] = useState(false);

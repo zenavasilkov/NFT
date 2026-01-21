@@ -7,6 +7,19 @@ import {
   setupWalletListeners
 } from '../utils/ethers';
 
+/**
+ * Manages Ethereum wallet connection state and provides actions to connect, disconnect, reconnect, and switch networks.
+ *
+ * @returns An object containing the current wallet state and action handlers:
+ * - `address`: the connected wallet address or `null` if not connected.
+ * - `chainId`: the active chain ID or `null` if not available.
+ * - `isConnected`: `true` when a wallet is connected, `false` otherwise.
+ * - `isConnecting`: `true` while a connection request is in progress, `false` otherwise.
+ * - `connectWallet(forcePopup?: boolean)`: initiates a wallet connection; when `forcePopup` is `true` forces a user prompt.
+ * - `disconnectWallet()`: resets state to a disconnected wallet.
+ * - `reconnectWallet()`: disconnects and then attempts a forced reconnect.
+ * - `switchNetwork()`: attempts to switch the wallet to the local network.
+ */
 export function useWallet() {
   const [walletState, setWalletState] = useState<WalletState>({
     address: null,

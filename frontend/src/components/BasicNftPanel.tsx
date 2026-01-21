@@ -6,6 +6,14 @@ interface BasicNftPanelProps {
   userAddress: string;
 }
 
+/**
+ * Renders a card-style panel that lets a specified user view their Basic NFTs and mint a new one.
+ *
+ * The panel includes a token URI input and mint button, displays loading and error states, shows an empty-state message when the user has no NFTs, and renders a responsive grid of owned NFTs.
+ *
+ * @param userAddress - The wallet address whose Basic NFTs are displayed and to which newly minted NFTs will be attributed
+ * @returns The component's JSX element: a card containing mint controls and the user's Basic NFT list or status views
+ */
 export function BasicNftPanel({ userAddress }: BasicNftPanelProps) {
   const { nfts, isLoading, error, mintNft } = useBasicNft(userAddress);
   const [tokenUri, setTokenUri] = useState('');

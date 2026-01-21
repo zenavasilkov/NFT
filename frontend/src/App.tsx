@@ -3,6 +3,11 @@ import { BasicNftPanel } from './components/BasicNftPanel';
 import { MoodNftPanel } from './components/MoodNftPanel';
 import { useWallet } from './hooks/useWallet';
 
+/**
+ * Render the NFT DApp layout and switch the main content based on wallet connection state.
+ *
+ * @returns The root React element for the app: a header with WalletConnect, a main area that shows a connect prompt when disconnected or the BasicNftPanel and MoodNftPanel when connected, and a footer.
+ */
 function App() {
   const { address, isConnected } = useWallet();
 

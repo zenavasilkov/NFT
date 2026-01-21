@@ -2,6 +2,21 @@ import { useState, useCallback, useEffect } from 'react';
 import { type NFT, type TokenMetadata } from '../types';
 import { getMoodNftContract, getProvider, parseMetadataFromBase64 } from '../utils/ethers';
 
+/**
+ * Provides state and actions for loading and managing Mood NFTs for an optional user address.
+ *
+ * Loads owned Mood NFTs, exposes loading and error state, and provides actions to mint new NFTs,
+ * flip a token's mood, and manually refresh the user's NFT list.
+ *
+ * @param userAddress - Optional wallet address used to scope NFT operations and queries
+ * @returns An object with:
+ *  - `nfts`: the list of discovered NFTs (each includes `tokenId`, `tokenURI`, optional `metadata`, and `owner`)
+ *  - `isLoading`: `true` when an operation is in progress, `false` otherwise
+ *  - `error`: an error message string when a recent operation failed, or `null`
+ *  - `mintNft`: function to mint a new Mood NFT for the current `userAddress`
+ *  - `flipMood`: function that accepts a `tokenId` to flip that token's mood
+ *  - `loadUserNFTs`: function to reload the current user's NFTs
+ */
 export function useMoodNft(userAddress?: string) {
   const [nfts, setNfts] = useState<NFT[]>([]);
   const [isLoading, setIsLoading] = useState(false);

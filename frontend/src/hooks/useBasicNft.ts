@@ -2,6 +2,17 @@ import { useState, useCallback, useEffect } from 'react';
 import { type NFT, type TokenMetadata } from '../types';
 import { getBasicNftContract, getProvider, parseMetadataFromBase64 } from '../utils/ethers';
 
+/**
+ * React hook that loads and manages NFTs owned by a given Ethereum address from the BasicNft contract.
+ *
+ * @param userAddress - Optional Ethereum address whose NFTs should be loaded and monitored
+ * @returns An object with:
+ *  - `nfts`: Array of NFTs owned by `userAddress`
+ *  - `isLoading`: `true` while a load or mint operation is in progress
+ *  - `error`: Error message string when an operation fails, or `null` when there is no error
+ *  - `mintNft`: Function `(tokenUri: string) => Promise<void>` that mints a new NFT with the provided token URI and refreshes the NFT list
+ *  - `loadUserNFTs`: Function `() => Promise<void>` that reloads NFTs for the current `userAddress`
+ */
 export function useBasicNft(userAddress?: string) {
   const [nfts, setNfts] = useState<NFT[]>([]);
   const [isLoading, setIsLoading] = useState(false);

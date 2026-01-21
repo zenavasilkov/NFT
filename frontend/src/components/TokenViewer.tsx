@@ -7,6 +7,16 @@ interface TokenViewerProps {
   isFlipping?: boolean;
 }
 
+/**
+ * Renders a card view for an NFT, showing its image, metadata (name, tokenId, owner, description, attributes) and an optional "Flip Mood" action.
+ *
+ * The component supports inline base64 SVG data URIs (decoded, adjusted for sizing, and sanitized), HTTP(S) image URLs, and IPFS URIs (via the ipfs.io gateway). When an image is unavailable or invalid, a placeholder box is shown. If `onFlipMood` is provided, a button invokes it with the tokenId and reflects the `isFlipping` disabled state.
+ *
+ * @param nft - The NFT object to display (metadata, tokenId, owner, tokenURI).
+ * @param onFlipMood - Optional callback invoked with the tokenId when the "Flip Mood" button is clicked.
+ * @param isFlipping - Optional flag that, when true, disables the Flip Mood button and updates its label.
+ * @returns The rendered JSX element for the token viewer.
+ */
 export function TokenViewer({ nft, onFlipMood, isFlipping }: TokenViewerProps) {
   const renderImage = () => {
     if (!nft.metadata?.image) return null;
