@@ -191,6 +191,8 @@ For style and guidelines, follow the repository's existing conventions.
 
 - [PR #1](https://github.com/zenavasilkov/NFT/pull/1) — BasicNft (off-chain metadata)
 - [PR #2](https://github.com/zenavasilkov/NFT/pull/2) — MoodNft (on-chain dynamic NFT)
+- [PR #3](https://github.com/zenavasilkov/NFT/pull/3) — Add frontend
+- [PR #5](https://github.com/zenavasilkov/NFT/pull/5) — Increase code coverage
 
 ---
 

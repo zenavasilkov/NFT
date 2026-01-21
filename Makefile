@@ -22,6 +22,10 @@ build:; forge build
 
 test :; forge test 
 
+coverage :; forge coverage
+
+coverage-report :; forge coverage --report lcov && genhtml lcov.info -o coverage
+
 zktest :; foundryup-zksync && forge test --zksync && foundryup
 
 snapshot :; forge snapshot
