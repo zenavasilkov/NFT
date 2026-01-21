@@ -12,6 +12,9 @@
 
 ## Project Overview
 
+[![Deployment Guide](https://img.shields.io/badge/Read-Deployment_Guide-blue?style=for-the-badge)](./DEPLOYMENT_GUIDE.md)
+[![Frontend Guide](https://img.shields.io/badge/Read-Frontend_Guide-green?style=for-the-badge)](./FRONTEND.md)
+
 This repository contains two example NFT contracts and supporting scripts that demonstrate two common NFT patterns:
 
 - BasicNft — a traditional ERC-721 token that uses off-chain metadata (JSON + hosted image/SVG). See PR #1 for the original implementation and discussion.
