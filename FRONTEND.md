@@ -10,6 +10,26 @@ A React + TypeScript frontend for interacting with BasicNft and MoodNft smart co
 - **Token Viewer**: Display NFT metadata, images, and attributes
 - **Responsive Design**: Built with custom CSS
 
+## Connect to wallet and start making your first transactions
+
+<p align="center">
+   <img width="479" height="1023" alt="image" src="https://github.com/user-attachments/assets/83e37684-fea0-4f55-a4de-b255f9833c24" />
+</p>
+
+## Mint NFTs with your own image
+
+Upload the link to the image and mint your own NFT
+
+<p align="center">
+   <img width="1253" height="519" alt="image" src="https://github.com/user-attachments/assets/39b0bf54-daa2-4f0f-b0a5-727963edfeeb" />
+</p>
+
+## Mood NFT
+Mint and flip your mood NFTs fully on-chain
+
+<img width="1278" height="893" alt="image" src="https://github.com/user-attachments/assets/e04c0779-f1f7-49e5-91a5-e8281bd39b06" />
+
+
 ## Getting Started
 
 ### Prerequisites
