@@ -13,7 +13,17 @@ export function TokenViewer({ nft, onFlipMood, isFlipping }: TokenViewerProps) {
 
     if (nft.metadata.image.startsWith('data:image/svg+xml;base64,')) {
       const base64Data = nft.metadata.image.split(',')[1];
-      let svgString = atob(base64Data);
+      let svgString: string;
+      try {
+        svgString = atob(base64Data);
+      } catch (e) {
+        console.warn('Invalid base64 SVG data', e);
+        return (
+          <div className="w-32 h-32 border rounded flex items-center justify-center text-gray-500 text-xs p-2">
+            Image not available
+          </div>
+        );
+      }
       
       const svgMatch = svgString.match(/<svg([^>]*)>/);
       if (svgMatch) {
